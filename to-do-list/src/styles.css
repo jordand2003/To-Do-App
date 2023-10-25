@@ -1,12 +1,19 @@
 *{
     margin: 0;
     text-decoration: none;
-    list-style-type: none
+    list-style-type: none;
+    font-family: Poppins;
 }
 
+body{
+    background-image: url("https://images.pexels.com/photos/3680912/pexels-photo-3680912.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-repeat: no-repeat;
+    background-size: 150%;
+    background-position: center;
+}
 .main--body{
     background: rgba(255,255,255,0.5);
-    border: 2px solid #1F8E1C;
+    border: 5px solid #AA4EB3;
     border-radius: 20px;
     margin: 100px auto;
     width: 50%;
@@ -17,21 +24,30 @@
 .header{
     display: flex;
     justify-content: center;
-    border-bottom: 4px solid #1F8E1C;
+    border-bottom: 4px solid #AA4EB3;
+    box-shadow: 0 10px 16px -16px #222;
     padding: 10px;
     align-items: center;
 }
 
 .title{
     margin-right: auto;
-    color: #1F8E1C;
+    color: #AA4EB3;
 }
 
 .new--item{
     margin: 10px 0px;
     padding: 12px;
     border-radius: 25px;
-    background-color: #1F8E1C;
+    background-color: #AA4EB3;
+    border: 1px solid black;
+    box-shadow: 0 10px 16px -16px #222;
+}
+
+.new--item:hover{
+    background-color: rgb(249, 246, 238);
+    width: 16%;
+    transition: all .2s ease-in-out;
 }
 
  ul{
@@ -41,9 +57,16 @@
 
 .item{
     padding: 20px;
-    border: 1px solid black;
+    border: 2px solid #AA4EB3;
     border-radius: 10px;
     margin-bottom: 10px;
     width: 91%;
 }
 
+input{
+    background-color: transparent;
+}
+
+input::focus{
+    border-color: #AA4EB3;
+}
