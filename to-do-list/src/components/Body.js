@@ -31,7 +31,7 @@ export default function Body() {
       </button>
       <input
         type="text"
-        placeholder="Insert errand here"
+        placeholder="Insert errand here. (6 Items Max)"
         className="item"
         name="item"
         value={formData.item}
