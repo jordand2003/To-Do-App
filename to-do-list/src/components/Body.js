@@ -7,7 +7,7 @@ export default function Body() {
   });
 
   function handleClick() {
-    if (formData.item.trim() !== "") {
+    if (formData.item.trim() !== "" && items.length < 6) {
       // Check if the input is not empty
       setItems((prevItems) => [...prevItems, formData.item]);
       setFormData({ item: "" }); // Clear the input field
@@ -22,7 +22,20 @@ export default function Body() {
     event.preventDefault();
   }
 
-  const itemsElements = items.map((item) => <li className="item">{item}</li>);
+  function deleteItem(index) {
+    const updatedItems = [...items];
+    updatedItems.splice(index, 1);
+    setItems(updatedItems);
+  }
+
+  const itemsElements = items.map((item) => (
+    <li className="item">
+      {item}{" "}
+      <button className="delete--button" onClick={deleteItem}>
+        Complete
+      </button>
+    </li>
+  ));
 
   return (
     <div>

@@ -45,6 +45,8 @@ body{
     box-shadow: 0 10px 16px -16px #222;
 }
 
+
+
 .new--item:hover{
     background-color: rgb(249, 246, 238);
     width: 16%;
@@ -71,4 +73,17 @@ input{
 
 input::focus{
     border-color: #AA4EB3;
+}
+
+.delete--button{
+    background-color: transparent;
+    color: lightgray;
+    border-color: lightgray;
+    float: right;
+}
+
+.delete--button:hover{
+    color: black;
+    border-color: black;
+    display: block;
 }
