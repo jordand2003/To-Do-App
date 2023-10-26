@@ -6,11 +6,23 @@ export default function Body() {
     item: "",
   });
 
+  React.useEffect(() => {
+    const storedTasks = localStorage.getItem("tasks");
+    if (storedTasks) {
+      setItems(JSON.parse(storedTasks));
+    }
+  }, []);
+
+  function updateLocalStorage(updatedItems) {
+    localStorage.setItem("tasks", JSON.stringify(updatedItems));
+  }
+
   function handleClick() {
     if (formData.item.trim() !== "" && items.length < 6) {
-      // Check if the input is not empty
-      setItems((prevItems) => [...prevItems, formData.item]);
-      setFormData({ item: "" }); // Clear the input field
+      const newItems = [...items, formData.item];
+      setItems(newItems);
+      updateLocalStorage(newItems);
+      setFormData({ item: "" });
     }
   }
 
@@ -23,9 +35,10 @@ export default function Body() {
   }
 
   function deleteItem(index) {
-    const updatedItems = [...items];
-    updatedItems.splice(index, 1);
-    setItems(updatedItems);
+    const newItems = [...items];
+    newItems.splice(index, 1);
+    setItems(newItems);
+    updateLocalStorage(newItems);
   }
 
   const itemsElements = items.map((item) => (
